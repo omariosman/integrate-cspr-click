@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@make-software/csprclick-core-client": "^1.2.0",
+    "@make-software/csprclick-core-types": "^1.2.0"
   }
 }

@@ -26,6 +26,30 @@
     -->
     <title>React App</title>
   </head>
+  <script>
+    window.csprClickSDKAsyncInit = function () {
+      window.csprclick.once('csprclick:loaded', () => {
+        // Perform extra actions when CSPR.click is fully loaded and initialized
+        // (optional)
+        console.log(`csprclick fully loaded`);
+      });
+      window.csprclick.on('csprclick:signed_in', (evt) => {
+        // Perform extra actions when CSPR.click is fully loaded and initialized
+        // (optional)
+        console.log(`csprclick signed in :${JSON.stringify(evt, null, 2)}`);
+      });
+      const clickOptions = {
+        appName: 'CSPR.app',
+        contentMode: 'iframe',
+        providers: ['casper-wallet', 'ledger', 'casperdash'],
+        appId: 'csprclick-template',
+      };
+
+      window.csprclick.init(clickOptions);
+    };
+  </script>
+  <script async src="https://cdn.cspr.click/latest/csprclick-sdk-0.7.js" charset="utf-8"></script>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
